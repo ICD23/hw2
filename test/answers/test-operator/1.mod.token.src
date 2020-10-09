@@ -1,0 +1,14 @@
+PROGRAM foo(input, output, error) ;
+   // this test checks various operators
+
+   var a, b, c: integer;
+   var d, e: array [ 1 .. 10 ] of integer;
+
+   begin
+      b := a + 93;  // simple expression
+      b := a - 93;  // simple expression
+      b := a * 93;  // simple expression
+      b := a / 93;  // simple expression
+      b := 3 + 93 * 5 + b * (23-15*6/9);  // complex expression
+
+      a := 1;   // test relation operators

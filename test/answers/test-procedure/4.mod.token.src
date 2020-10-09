@@ -1,0 +1,4 @@
+PROGRAM foo(input, output, error) ;
+   // This example tests simple procedures with parameters.
+   var g: integer;
+

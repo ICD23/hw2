@@ -1,0 +1,4 @@
+PROGRAM foo(input, output, error) ;
+   var a, b: integer;
+
+   // test simple, non-recursive functions

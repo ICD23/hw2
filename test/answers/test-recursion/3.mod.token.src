@@ -1,0 +1,8 @@
+PROGRAM foo(input, output, error) ;
+
+   var a, b : integer;
+
+   // test recursive functions
+   function  sum(a: integer) : integer;
+      begin
+         if a <= 0 then sum := 0

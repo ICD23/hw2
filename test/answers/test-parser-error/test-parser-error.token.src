@@ -1,0 +1,5 @@
+PROGRAM foo(input, output, error) ;
+   var c, d, e, f, g: integer;
+
+   procedure  sum(a, b: integer);
+      begin   // here is a parser error.

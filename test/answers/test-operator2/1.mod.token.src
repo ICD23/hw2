@@ -1,0 +1,3 @@
+PROGRAM foo(input, output, error) ;
+   // this test checks various operators
+

@@ -1,0 +1,2 @@
+PROGRAM foo(input, output, error) ;
+   var a,c: integer;

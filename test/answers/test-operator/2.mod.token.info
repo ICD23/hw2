@@ -1,0 +1,1 @@
+[ERROR] line   18: 39       if b >= a then a := a * 17 else *, Unmatched token: *

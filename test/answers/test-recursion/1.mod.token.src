@@ -1,0 +1,5 @@
+PROGRAM foo(input, output, error) ;
+
+   var a, b : integer;
+
+   // test recursive functions

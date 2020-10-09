@@ -1,0 +1,4 @@
+PROGRAM foo(input, output, error) ;
+   // this test checks various operators
+
+   var a, b, c: integer;

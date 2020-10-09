@@ -1,0 +1,1 @@
+[ERROR] line    4: 26 VAR d : array [1..10] of ;, Unmatched token: ;

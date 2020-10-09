@@ -1,0 +1,3 @@
+program helloWorld(output);
+VAR a,c :integer;
+VAR b : real;

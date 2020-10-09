@@ -1,0 +1,8 @@
+PROGRAM foo(input, output, error) ;
+   // this test checks various degrees of constant folding
+
+   var a, b, c: integer;
+   var d, e: array [ 1 .. 10 ] of integer;
+
+   begin
+      a := 2+99; // simple expression
