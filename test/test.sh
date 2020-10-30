@@ -14,6 +14,13 @@ then
     exit 1
 fi
 
+if diff --help 2>&1 | grep "strip-trailing" > /dev/null 2>&1
+then
+    DIFF="diff -s --strip-trailing-cr"
+else
+    DIFF="diff -s"
+fi
+
 correct=0
 pass=0
 ignore=0
@@ -36,7 +43,7 @@ do
 
     # compare the file with answer in answers/
     #if cmp -s "${file}" "${ans}"
-    if diff -s --strip-trailing-cr "${file}" "${ans}" > /dev/null
+    if $DIFF "${file}" "${ans}" > /dev/null
     then
         ((correct=correct+1))
         echo -e "${LGR}[O] ${file} pass the test${NC}"
