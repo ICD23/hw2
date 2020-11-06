@@ -6,7 +6,7 @@
 #include "error.h"
 
 #define MAX_LINE_LENG      256
-extern int line_no, chr_no, opt_list;
+extern int line_no, col_no, opt_list;
 extern char buffer[MAX_LINE_LENG];
 extern FILE *yyin;        /* declared by lex */
 extern char *yytext;      /* declared by lex */
@@ -40,7 +40,7 @@ prog: PROGRAM
 void yyerror(const char *msg) {
     fprintf(stderr,
             "[ERROR] line %4d:%3d %s, Unmatched token: %s\n",
-            line_no, chr_no-(int)yyleng+1, buffer, yytext);
+            line_no, col_no-(int)yyleng+1, buffer, yytext);
 }
 
 int main(int argc, const char *argv[]) {
