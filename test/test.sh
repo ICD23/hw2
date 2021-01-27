@@ -46,9 +46,9 @@ do
     if $DIFF "${file}" "${ans}" > /dev/null
     then
         ((correct=correct+1))
-        echo -e "${LGR}[O] ${file} pass the test${NC}"
+        echo -e "$(printf "%02d" $pass). ${LGR}[O] ${file} pass the test${NC}"
     else
-        echo -e "${RED}[X] ${file} is incorrect${NC}"
+        echo -e "$(printf "%02d" $pass). ${RED}[X] ${file} is incorrect${NC}"
     fi
 done
 
