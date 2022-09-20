@@ -1,4 +1,4 @@
-# ICD20 Homework2
+# ICD22 Homework2
 
 ## How port your homework1 to homework2
 
