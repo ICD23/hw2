@@ -37,7 +37,7 @@ test: all
 
 pack:
 	make clean
-	zip -r icd20-hw2.zip . -x ".*" -x "*.zip" -x "test/*"
+	zip -r icd22-hw2.zip . -x ".*" -x "*.zip" -x "test/*"
 
 .PHONY: clean
 
