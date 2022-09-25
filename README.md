@@ -8,3 +8,6 @@
 4. add a `#pragma token on` and `#pragma token off` to control `[INFO]` and `token(type:...)...` message, default is off
 
 Please follow the grammar in `01-minipascal-spec.pdf ` to write your syntax rule in `parser.y`.
+
+## Some useful online information
+[lex & yacc](http://dinosaur.compilertools.net/#lex)
