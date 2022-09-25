@@ -35,6 +35,7 @@ prepare:
 	sudo apt install libfl-dev
 	sudo apt install bison
 
+
 test: all
 	make test -C test/
 
