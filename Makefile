@@ -1,10 +1,12 @@
 SCANNER = scanner
 PARSER  = parser
 CC      = gcc
-CFLAGS  = -Wall -std=c11
+CFLAGS  = -Wall -std=c11 -D_POSIX_C_SOURCE=1
 LEX     = flex
 YACC    = bison
 LIBS    = -lfl
+# Enable Y_DEBUG for debug
+#Y_DEBUG	= --verbose --report=state
 
 EXEC    = $(PARSER)
 OBJS    = $(PARSER) \
@@ -21,7 +23,7 @@ $(SCANNER).c: %.c: %.l
 	$(LEX) -o $@ $<
 
 $(PARSER).c: %.c: %.y
-	$(YACC) -d -o $@ -v $<
+	$(YACC) $(Y_DEBUG) -d -o $@ -v $<
 
 $(EXEC): $(OBJS)
 	$(CC) -o $@ $^ $(LIBS)
