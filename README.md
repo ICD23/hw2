@@ -1,5 +1,6 @@
 # ICD22 Homework2
 
+
 ## How port your homework1 to homework2
 
 1. **Remove** the main from the `scanner.l`.
@@ -16,3 +17,7 @@ Please follow the grammar in `01-minipascal-spec.pdf ` to write your syntax rule
 [Makefile](https://www.gnu.org/software/make/manual/make.html)
 
 [C preprocessor(cpp)](https://gcc.gnu.org/onlinedocs/cpp/index.html)
+
+## DEBUG
+
+If you wnat to see the parser with states and shift/reduce, please edit Makefile and Remove `#` before `Y_DEBUG`. And open `parser.output` to find out what's wrong.
