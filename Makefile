@@ -6,13 +6,11 @@ CFLAGS  = -Wall -std=c11 -D_POSIX_C_SOURCE=1
 LEX     = flex
 YACC    = bison
 LIBS    = -lfl
-# Enable Y_DEBUG for debug
-#Y_DEBUG	= --verbose --report=state
 
 YDEBUG	= -x --graph --verbose --report=state
 
 YDEBUGO	= $(PARSER:=.xml) $(PARSER:=.output) $(PARSER:=.png) \
-	  $(PARSER:=.html) $(PARSER:=.dot)
+	  $(PARSER:=.html) $(PARSER:=.dot) $(PARSER:=.gv)
 EXEC    = $(PARSER)
 OBJS    = $(PARSER) \
 	      $(SCANNER)
