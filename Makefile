@@ -26,7 +26,7 @@ $(SCANNER).c: %.c: %.l
 	$(LEX) -o $@ $<
 
 $(PARSER).c: %.c: %.y
-	$(YACC)-d -o $@  $<
+	$(YACC) -d -o $@  $<
 
 .PHONY: debug
 debug: $(PARSER).y
