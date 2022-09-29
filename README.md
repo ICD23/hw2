@@ -18,6 +18,6 @@ Please follow the grammar in `01-minipascal-spec.pdf ` to write your syntax rule
 
 [C preprocessor(cpp)](https://gcc.gnu.org/onlinedocs/cpp/index.html)
 
-## DEBUG
+## Visualize your parser
 
-If you wnat to see the parser with states and shift/reduce, please edit Makefile and Remove `#` before `Y_DEBUG`. And open `parser.output` to find out what's wrong.
+Please use `make debug` in the docker, and it will create a png file.
