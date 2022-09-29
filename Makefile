@@ -1,10 +1,13 @@
 SCANNER = scanner
 PARSER  = parser
 CC      = gcc
-CFLAGS  = -Wall -std=c11 -D_POSIX_C_SOURCE=1 -DYYDEBUG=1
+CFLAGS  = -Wall -std=c11 -D_POSIX_C_SOURCE=1
+
 LEX     = flex
 YACC    = bison
 LIBS    = -lfl
+# Enable Y_DEBUG for debug
+#Y_DEBUG	= --verbose --report=state
 
 YDEBUG	= -x --graph --verbose --report=state
 
@@ -34,6 +37,7 @@ debug: $(PARSER).y
 	$(YACC) $(YDEBUG) -d -o $(PARSER).c  $<
 	bash ./debug.sh
 
+
 $(EXEC): $(OBJS)
 	$(CC) -o $@ $^ $(LIBS)
 
@@ -42,13 +46,17 @@ prepare:
 	# you can prepare the extra package you need here, e.g.
 	#apt install clang
 	#apt install g++
+	sudo apt install flex=2.6.4-6.2
+	sudo apt install libfl-dev
+	sudo apt install bison
+
 
 test: all
 	make test -C test/
 
 pack:
 	make clean
-	zip -r icd20-hw2.zip . -x ".*" -x "*.zip" -x "test/*"
+	zip -r icd22-hw2.zip . -x ".*" -x "*.zip" -x "test/*"
 
 .PHONY: clean
 
