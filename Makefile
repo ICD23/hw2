@@ -2,21 +2,15 @@ SCANNER = scanner
 PARSER  = parser
 CC      = gcc
 CFLAGS  = -Wall -std=c11 -D_POSIX_C_SOURCE=1
-
 LEX     = flex
 YACC    = bison
 LIBS    = -lfl
 # Enable Y_DEBUG for debug
 #Y_DEBUG	= --verbose --report=state
 
-YDEBUG	= -x --graph --verbose --report=state
-
-YDEBUGO	= $(PARSER:=.xml) $(PARSER:=.output) $(PARSER:=.png) \
-	  $(PARSER:=.html) $(PARSER:=.dot)
 EXEC    = $(PARSER)
 OBJS    = $(PARSER) \
 	      $(SCANNER)
-#Note Makefiel have implicit rule for OBJS-> %.o:%.c
 OBJS := $(OBJS:=.o)
 DEPS := $(OBJS:=.d)
 
@@ -29,14 +23,7 @@ $(SCANNER).c: %.c: %.l
 	$(LEX) -o $@ $<
 
 $(PARSER).c: %.c: %.y
-	$(YACC) -d -o $@  $<
-
-.PHONY: debug
-debug: $(PARSER).y
-	make clean
-	$(YACC) $(YDEBUG) -d -o $(PARSER).c  $<
-	bash ./debug.sh
-
+	$(YACC) $(Y_DEBUG) -d -o $@ -v $<
 
 $(EXEC): $(OBJS)
 	$(CC) -o $@ $^ $(LIBS)
@@ -62,7 +49,7 @@ pack:
 
 clean:
 	make clean -C test/
-	$(RM) $(SCANNER) $(SCANNER:=.c) $(PARSER:=.c) $(PARSER:=.h) $(DEPS) $(YDEBUGO) $(OBJS) $(EXEC)
+	$(RM) $(SCANNER) $(SCANNER:=.c) $(PARSER:=.c) $(PARSER:=.h) $(DEPS) $(PARSER:=.output) $(OBJS) $(EXEC)
 
 DOCKERHUB_ACCOUNT=plaslab
 IMAGE_NAME = compiler-f20-hw2
