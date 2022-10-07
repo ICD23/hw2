@@ -18,6 +18,8 @@ Please follow the grammar in `01-minipascal-spec.pdf ` to write your syntax rule
 
 [C preprocessor(cpp)](https://gcc.gnu.org/onlinedocs/cpp/index.html)
 
+[standard pascal.y](https://www.gnu-pascal.de/alpha/)
+
 ## Visualize your parser
 
 Please use `make debug` in the docker, and it will create a png file.
