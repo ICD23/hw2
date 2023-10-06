@@ -1,4 +1,4 @@
-# ICD22 Homework2
+# ICD23 Homework2
 
 
 ## How port your homework1 to homework2
@@ -23,6 +23,16 @@ Please follow the grammar in `01-minipascal-spec.pdf ` to write your syntax rule
 [C preprocessor(cpp)](https://gcc.gnu.org/onlinedocs/cpp/index.html)
 
 [standard pascal.y](https://www.gnu-pascal.de/alpha/)
+
+## Grading 
+
+Please run `make debug` to see how many testcases you could pass.  
+You will get the exact grade if you define your behavior properly in scanner/parser  
+(e.g. no hard-coded, no edit the testcase ... )  
+
+## Hand-in homework
+
+Please run `make pack` and upload the compressed file to E3.
 
 ## Visualize your parser
 
