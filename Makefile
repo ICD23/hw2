@@ -44,7 +44,7 @@ prepare:
 	# you can prepare the extra package you need here, e.g.
 	#apt install clang
 	#apt install g++
-	sudo apt install flex=2.6.4-6.2
+	sudo apt install flex
 	sudo apt install libfl-dev
 	sudo apt install bison
 
